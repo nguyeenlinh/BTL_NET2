@@ -1,0 +1,20 @@
+@model BTL_NET2.Models.User
+
+@{
+  Layout = "_LoginLayout";
+}
+
+<form asp-action="Login">
+  <div class="row">
+    <div class="colm-form">
+      <h2>Đăng nhập</h2>
+      <div class="form-container">
+        <input type="text" asp-for="Name" placeholder="Username">
+        <input type="password" asp-for="Password" placeholder="Password">
+        <button class="btn-login" type="submit">Login</button>
+
+      </div>
+
+    </div>
+  </div>
+</form>

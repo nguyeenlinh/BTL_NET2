@@ -1,0 +1,54 @@
+@model IEnumerable<BTL_NET2.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sách học sinh</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAdd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentClass)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentAdd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentClass)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
